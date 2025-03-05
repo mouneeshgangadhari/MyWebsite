@@ -1,0 +1,321 @@
+// Define default theme variables
+:root {
+  --theme-background: #1a1a2e;
+  --theme-text-color: #ffffff;
+  --theme-primary-color: #fdd835; // Default (yellow)
+  --theme-card-bg: rgba(255, 255, 255, 0.1);
+}
+
+// Light Theme
+[data-theme="light"] {
+  --theme-background: #f9f9f9;
+  --theme-text-color: #333;
+  --theme-primary-color: #007bff; // Blue
+  --theme-card-bg: rgba(0, 0, 0, 0.1);
+}
+
+// Dark Theme
+[data-theme="dark"] {
+  --theme-background: #121212;
+  --theme-text-color: #ffffff;
+  --theme-primary-color: #ff9800; // Orange
+  --theme-card-bg: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="cupcake"] {
+  --theme-primary-color: #65c3c8;
+  --theme-text-color: #6b7280;
+  --theme-card-bg: #fae8ff;
+  --theme-accent-color: #ff80b5;
+}
+
+[data-theme="bumblebee"] {
+  --theme-primary-color: #e0a82e;
+  --theme-text-color: #3d2c02;
+  --theme-card-bg: #ffffff;
+  --theme-accent-color: #ffbf00;
+}
+
+[data-theme="emerald"] {
+  --theme-primary-color: #10b981;
+  --theme-text-color: #064e3b;
+  --theme-card-bg: #d1fae5;
+  --theme-accent-color: #34d399;
+}
+
+[data-theme="corporate"] {
+  --theme-primary-color: #4b5563;
+  --theme-text-color: #111827;
+  --theme-card-bg: #ffffff;
+  --theme-accent-color: #3b82f6;
+}
+
+[data-theme="synthwave"] {
+  --theme-primary-color: #d946ef;
+  --theme-text-color: #f9a8d4;
+  --theme-card-bg: #2d1b69;
+  --theme-accent-color: #f472b6;
+}
+
+[data-theme="retro"] {
+  --theme-primary-color: #efb62a;
+  --theme-text-color: #403d39;
+  --theme-card-bg: #fff7db;
+  --theme-accent-color: #ff6f3c;
+}
+
+[data-theme="valentine"] {
+  --theme-primary-color: #e92b6f;
+  --theme-text-color: #fbcfe8;
+  --theme-card-bg: #ffc0cb;
+  --theme-accent-color: #ff80b5;
+}
+
+[data-theme="halloween"] {
+  --theme-primary-color: #ff8c00;
+  --theme-text-color: #1e1e1e;
+  --theme-card-bg: #2d1b00;
+  --theme-accent-color: #ff4500;
+}
+
+[data-theme="garden"] {
+  --theme-primary-color: #3a9a5c;
+  --theme-text-color: #155724;
+  --theme-card-bg: #daf1e0;
+  --theme-accent-color: #22c55e;
+}
+
+[data-theme="forest"] {
+  --theme-primary-color: #228b22;
+  --theme-text-color: #0d3627;
+  --theme-card-bg: #cce5cc;
+  --theme-accent-color: #32cd32;
+}
+
+[data-theme="aqua"] {
+  --theme-primary-color: #3b82f6;
+  --theme-text-color: #0ea5e9;
+  --theme-card-bg: #e0f7fa;
+  --theme-accent-color: #38bdf8;
+}
+
+[data-theme="lofi"] {
+  --theme-primary-color: #737373;
+  --theme-text-color: #292929;
+  --theme-card-bg: #f5f5f5;
+  --theme-accent-color: #9ca3af;
+}
+
+[data-theme="pastel"] {
+  --theme-primary-color: #f9a8d4;
+  --theme-text-color: #374151;
+  --theme-card-bg: #f3e8ff;
+  --theme-accent-color: #a5b4fc;
+}
+
+[data-theme="fantasy"] {
+  --theme-primary-color: #ff80b5;
+  --theme-text-color: #c084fc;
+  --theme-card-bg: #fff1f2;
+  --theme-accent-color: #d946ef;
+}
+
+[data-theme="wireframe"] {
+  --theme-primary-color: #7a7a7a;
+  --theme-text-color: #262626;
+  --theme-card-bg: #ffffff;
+  --theme-accent-color: #9ca3af;
+}
+
+[data-theme="black"] {
+  --theme-primary-color: #0d0d0d;
+  --theme-text-color: #f5f5f5;
+  --theme-card-bg: #1a1a1a;
+  --theme-accent-color: #737373;
+}
+
+[data-theme="luxury"] {
+  --theme-primary-color: #4c1d95;
+  --theme-text-color: #f5f5f5;
+  --theme-card-bg: #1e293b;
+  --theme-accent-color: #c084fc;
+}
+
+[data-theme="dracula"] {
+  --theme-primary-color: #ff79c6;
+  --theme-text-color: #f8f8f2;
+  --theme-card-bg: #282a36;
+  --theme-accent-color: #bd93f9;
+}
+
+[data-theme="cmyk"] {
+  --theme-primary-color: #00ffff;
+  --theme-text-color: #000;
+  --theme-card-bg: #fff;
+  --theme-accent-color: #ff00ff;
+}
+
+[data-theme="autumn"] {
+  --theme-primary-color: #d97706;
+  --theme-text-color: #7c2d12;
+  --theme-card-bg: #fde68a;
+  --theme-accent-color: #f59e0b;
+}
+
+[data-theme="business"] {
+  --theme-primary-color: #1e293b;
+  --theme-text-color: #334155;
+  --theme-card-bg: #f8fafc;
+  --theme-accent-color: #475569;
+}
+
+[data-theme="acid"] {
+  --theme-primary-color: #84cc16;
+  --theme-text-color: #65a30d;
+  --theme-card-bg: #ecfccb;
+  --theme-accent-color: #a3e635;
+}
+
+[data-theme="lemonade"] {
+  --theme-primary-color: #facc15;
+  --theme-text-color: #713f12;
+  --theme-card-bg: #fef9c3;
+  --theme-accent-color: #fde047;
+}
+
+[data-theme="night"] {
+  --theme-primary-color: #1e293b;
+  --theme-text-color: #e5e7eb;
+  --theme-card-bg: #0f172a;
+  --theme-accent-color: #475569;
+}
+
+[data-theme="coffee"] {
+  --theme-primary-color: #a16207;
+  --theme-text-color: #422006;
+  --theme-card-bg: #f5deb3;
+  --theme-accent-color: #9a3412;
+}
+
+[data-theme="winter"] {
+  --theme-primary-color: #60a5fa;
+  --theme-text-color: #2563eb;
+  --theme-card-bg: #eff6ff;
+  --theme-accent-color: #3b82f6;
+}
+
+[data-theme="dim"] {
+  --theme-primary-color: #374151;
+  --theme-text-color: #9ca3af;
+  --theme-card-bg: #1f2937;
+  --theme-accent-color: #6b7280;
+}
+
+[data-theme="nord"] {
+  --theme-primary-color: #88c0d0;
+  --theme-text-color: #eceff4;
+  --theme-card-bg: #3b4252;
+  --theme-accent-color: #81a1c1;
+}
+
+[data-theme="sunset"] {
+  --theme-primary-color: #f97316;
+  --theme-text-color: #7c2d12;
+  --theme-card-bg: #fed7aa;
+  --theme-accent-color: #ea580c;
+}
+
+
+  
+
+// Skills Section Styles
+.skills {
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  background-color: var(--theme-background);
+  color: var(--theme-text-color);
+
+  &__content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 20px;
+
+    &__inner-content {
+      background: var(--theme-card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &__category-text {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--theme-primary-color);
+        margin-bottom: 10px;
+      }
+
+      &__progressbar-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+
+        .progressbar-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+
+          p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--theme-text-color);
+            margin-bottom: 5px;
+          }
+
+          .rc-progress-line {
+            width: 100%;
+          }
+
+          .rc-progress-line-path {
+            stroke: var(--theme-primary-color) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media only screen and (max-width: 768px) {
+  .skills__content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills__content-wrapper__inner-content {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .skills__content-wrapper__inner-content {
+    width: 100%;
+  }
+
+  .skills__content-wrapper__inner-content__category-text {
+    font-size: 1.5rem;
+  }
+
+  .progressbar-wrapper p {
+    font-size: 1rem;
+  }
+}

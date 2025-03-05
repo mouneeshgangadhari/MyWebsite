@@ -1,0 +1,155 @@
+.portfolio {
+  &__content {
+    padding: 20px;
+    width: 100%;
+
+    &__filter {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 25px;
+      border: 1px dashed;
+      
+      li {
+        font-size: 16px;
+        cursor: pointer;
+        padding: 12px 20px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        border-radius: 25px;
+
+        &.active {
+          font-weight: 600;
+          background-color: black;
+          color: white;
+        }
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 20px;
+
+      &__item {
+        height: 366px;
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 8px;
+        overflow: hidden;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+
+        a {
+          display: block;
+          height: 100%;
+          width: 100%;
+          text-decoration: none;
+          position: relative;
+        }
+
+        &__img-wrapper {
+          height: 100%;
+          overflow: hidden;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+          }
+        }
+
+        &:hover img {
+          transform: scale(1.1);
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          padding: 15px;
+
+          .project-name {
+            font-size: 1.6rem;
+            color: white;
+            font-weight: bold;
+          }
+
+          .tech-stack {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-top: 8px;
+          }
+        }
+
+        &:hover .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media only screen and (max-width: 1024px) {
+  .portfolio__content__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .portfolio__content__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .overlay {
+    padding: 10px;
+
+    .project-name {
+      font-size: 1.4rem;
+    }
+
+    .tech-stack {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .portfolio__content__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .overlay {
+    padding: 8px;
+
+    .project-name {
+      font-size: 1.2rem;
+    }
+
+    .tech-stack {
+      font-size: 0.9rem;
+    }
+  }
+}

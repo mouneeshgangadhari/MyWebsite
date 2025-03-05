@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
+.App{
+  // height: 100%;
+  &__main-page-content{
+      height: calc(100% - 80px);
+  }
+}

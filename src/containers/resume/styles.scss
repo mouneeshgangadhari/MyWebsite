@@ -1,0 +1,94 @@
+.resume {
+    height: 100%;
+}
+
+.resume__container {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.timeline__education, .timeline__certificates {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline__education__header-text {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-bottom: 2px solid ;
+    position: relative;
+}
+
+.timeline__education__header-text::before, .timeline__education__header-text::after {
+    position: absolute;
+    width: 2px;
+    height: 5px;
+    bottom: -1px;
+}
+
+// .timeline__education__header-text::before {
+//     left: 0;
+// }
+
+// .timeline__education__header-text::after {
+//     right: 0;
+// }
+
+.timeline__experience__vertical-timeline-element {
+    padding: 0px 0px 30px 0px;
+
+    &:last-child {
+        padding-bottom: 0px;
+    }
+}
+
+.vertical-timeline-element-title-wrapper {
+    display: flex;
+    align-items: center;
+
+    h3, h4 {
+        font-size: 16px;
+    }
+
+    h4 {
+        margin-left: 8px;
+    }
+}
+
+.vertical-timeline-element-title-wrapper-description {
+    font-size: 18px;
+}
+
+.vertical-timeline-element-content {
+    box-shadow: none;
+}
+
+.vertical-timeline-element-content-arrow {
+    display: none;
+}
+
+.vertical-timeline-element-date {
+    opacity: 1;
+    font-size: 18px;
+}
+
+// Responsive Design for Mobile Screens
+@media only screen and (max-width: 768px) {
+    .resume__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline__education, .timeline__certificates {
+        width: 100%;
+    }
+}
