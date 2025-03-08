@@ -31,23 +31,7 @@ const Home = () => {
         </h1>
       </motion.div>
 
-      {/* Animated Hire Me Button */}
-      <motion.div
-        className="home__contact-me"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
-      >
-        <motion.button
-          onClick={handleNavigateToContactMePage}
-          className="home__button"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Hire Me"
-        >
-          Hire Me
-        </motion.button>
-      </motion.div>
+  
     </section>
   );
 };
