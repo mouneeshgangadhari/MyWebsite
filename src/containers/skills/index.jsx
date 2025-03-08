@@ -51,7 +51,7 @@ const Skills = () => {
                     opacity: 1,
                   }}
                 >
-                  <p className="skill-item" style={{ textAlign: "left" }}>{skillItem.skillName}</p>
+                  <h3 className="skill-item" style={{ textAlign: "left" }}>{skillItem.skillName}</h3>
                 </Animate>
               ))}
             </div>
