@@ -1,7 +1,6 @@
-import { Line } from "rc-progress";
 import React from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
-import { Animate, AnimateKeyframes } from "react-simple-animate";
+import { Animate } from "react-simple-animate";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { skillsData } from "./utils";
 import "./styles.scss";
@@ -35,27 +34,10 @@ const Skills = () => {
               </h3>
             </Animate>
 
-            {/* Animate skill bars individually */}
-            <div className="skills__content-wrapper__inner-content__progressbar-container">
+            {/* Display skill names without percentage bars */}
+            <div className="skills__content-wrapper__inner-content__skills-list">
               {item.data.map((skillItem, j) => (
-                <AnimateKeyframes
-                  key={j}
-                  play={true} // Ensure animation runs
-                  duration={1}
-                  keyframes={["opacity: 0", "opacity: 1"]} // Fade-in effect
-                  iterationCount={1}
-                >
-                  <div className="progressbar-wrapper">
-                    <p>{skillItem.skillName}</p>
-                    <Line
-                      percent={skillItem.percentage}
-                      strokeWidth="2"
-                      strokeColor="var(--theme-primary-color)"
-                      trailWidth="2"
-                      strokeLinecap="square"
-                    />
-                  </div>
-                </AnimateKeyframes>
+                <p key={j} className="skill-item">{skillItem.skillName}</p>
               ))}
             </div>
           </div>
