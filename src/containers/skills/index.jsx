@@ -34,10 +34,25 @@ const Skills = () => {
               </h3>
             </Animate>
 
-            {/* Display skill names without percentage bars */}
+            {/* Animate skill names and align left */}
             <div className="skills__content-wrapper__inner-content__skills-list">
               {item.data.map((skillItem, j) => (
-                <p key={j} className="skill-item">{skillItem.skillName}</p>
+                <Animate
+                  key={j}
+                  play={true}
+                  duration={1}
+                  delay={0.3 + j * 0.1} // Stagger animation
+                  start={{
+                    transform: "translateX(-100px)",
+                    opacity: 0,
+                  }}
+                  end={{
+                    transform: "translateX(0px)",
+                    opacity: 1,
+                  }}
+                >
+                  <p className="skill-item" style={{ textAlign: "left" }}>{skillItem.skillName}</p>
+                </Animate>
               ))}
             </div>
           </div>
