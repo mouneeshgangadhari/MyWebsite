@@ -1,0 +1,17 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+[data-theme="light"] {
+  --theme-primary-color: #006eff;
+  --theme-text-color: #333;
+  --theme-card-bg: #ffffff;
+  --theme-accent-color: hsla(205, 100%, 50%, 0.874);
+}
+
+[data-theme="dark"] {
+  --theme-primary-color: #ffcc00;
+  --theme-text-color: #f5f5f5;
+  --theme-card-bg: #222;
+  --theme-accent-color: #ffcc00;
+}

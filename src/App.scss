@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: all;
+}
+.App{
+  // height: 100%;
+  &__main-page-content{
+      height: calc(100% - 80px);
+  }
+}
+:root {
+  --bg-light: #ffffff;
+  --text-light: #1a202c;
+
+  --bg-dark: #1a202c;
+  --text-dark: #f7fafc;
+}
+
+.App {
+  transition: background 0.1s, color 0.1s;
+}
+
+.App.light {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+
+.App.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.navbar__menu__item__links.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.App.light .navbar__menu__item__links.theme-toggle {
+  color: var(--text-light);
+}
+
+.App.dark .navbar__menu__item__links.theme-toggle {
+  color: var(--text-dark);
+}
