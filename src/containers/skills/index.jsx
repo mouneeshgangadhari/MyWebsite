@@ -1,18 +1,16 @@
 import React, { useState, useMemo, useCallback } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
-import { FaCode, FaDatabase, FaTools, FaCogs, FaLock } from "react-icons/fa";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { skillsData } from "./utils";
-import { FaBrain } from "react-icons/fa";
 
 import "./styles.scss";
 
 const filterData = [
-  { filterId: 0, label: "Languages", icon: <FaCogs size={80} /> },
-  { filterId: 1, label: "Frameworks & Libraries", icon: <FaCode size={80} /> },
-  { filterId: 2, label: "Databases & Blockchain", icon: <FaDatabase size={80} /> },
-  { filterId: 3, label: "Tools & Platforms", icon: <FaTools size={80} /> },
-  { filterId: 4, label: "AI & ML", icon: <FaBrain size={80} /> },
+  { filterId: 0, label: "Languages" },
+  { filterId: 1, label: "Frameworks & Libraries" },
+  { filterId: 2, label: "Databases & Blockchain" },
+  { filterId: 3, label: "Tools & Platforms" },
+  { filterId: 4, label: "AI & ML" },
 ];
 
 const Skills = () => {
@@ -36,14 +34,13 @@ const Skills = () => {
 
       {/* Filter buttons */}
       <div className="skills__filter">
-        {filterData.map(({ filterId, label, icon }) => (
+        {filterData.map(({ filterId, label }) => (
           <button
             key={filterId}
             className={filterId === filteredValue ? "active" : ""}
             onClick={() => handleFilterClick(filterId)}
           >
-            {icon}
-            <span className="skills__icon-name">{label}</span>
+            {label}
           </button>
         ))}
       </div>
@@ -57,12 +54,14 @@ const Skills = () => {
               {item.data.map((skillItem, j) => (
                 <div key={j} className="skills__progress-bar">
                   <div className="skills__progress-bar-label">
-                    {skillItem.image && (
-                      <img sizes="10px"
+                    {skillItem.image ? (
+                      <img
                         src={skillItem.image}
                         alt={skillItem.skillName}
                         className="skills__icon-large"
                       />
+                    ) : (
+                      <span className="skills__icon-placeholder">N/A</span>
                     )}
                     <span className="skills__icon-name">{skillItem.skillName}</span>
                   </div>
