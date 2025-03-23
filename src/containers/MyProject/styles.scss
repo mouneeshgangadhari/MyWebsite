@@ -1,52 +1,78 @@
+// Portfolio Section
 .portfolio {
   &__content {
-    padding: 20px;
+    padding: 30px 20px;                        // Adjusted padding for better spacing
     width: 100%;
+    background: var(--theme-background);
+    color: var(--theme-text-color);
 
     &__filter {
       display: flex;
+      flex-wrap: wrap;                         // Wrap filter items on smaller screens
       justify-content: center;
       gap: 10px;
-      padding: 10px;
+      padding: 15px;
       border-radius: 25px;
-      border: 1px dashed;
-      
+      border: 1px dashed var(--theme-primary-color);
+
       li {
-        font-size: 16px;
+        font-size: 14px;                       // Smaller font for better fit on mobile
         cursor: pointer;
-        padding: 12px 20px;
+        padding: 10px 18px;                    // Reduced padding for smaller screens
         text-transform: uppercase;
         transition: all 0.3s ease;
         border-radius: 25px;
 
         &.active {
           font-weight: 600;
-          background-color: black;
+          background-color: var(--theme-primary-color);
           color: white;
         }
 
         &:hover {
-          background-color: black;
+          background-color: var(--theme-primary-color);
           color: white;
+        }
+
+        @media only screen and (max-width: 480px) {
+          font-size: 12px;                     // Even smaller on extra small screens
+          padding: 8px 15px;
         }
       }
     }
 
     &__cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 20px;
+      grid-template-columns: repeat(3, 1fr);    // Three columns by default
+      gap: 1.5rem;
+      margin-top: 30px;
+
+      @media only screen and (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);  // Two columns for tablets
+      }
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);  // Two columns for smaller screens
+        gap: 1rem;                              // Reduced gap
+      }
+
+      @media only screen and (max-width: 480px) {
+        grid-template-columns: 1fr;             // One column for mobile
+        gap: 0.8rem;                            // Tighter gap on small screens
+      }
 
       &__item {
-        height: 366px;
+        height: 350px;
         position: relative;
         transition: transform 0.3s ease-in-out;
-        border-radius: 8px;
+        border-radius: 12px;
         overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
 
         &:hover {
-          transform: scale(1.02);
+          transform: scale(1.03);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         a {
@@ -79,7 +105,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0, 0, 0, 0.8);
+          background: rgba(0, 0, 0, 0.85);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -87,18 +113,42 @@
           text-align: center;
           opacity: 0;
           transition: opacity 0.3s ease-in-out;
-          padding: 15px;
+          padding: 20px;
 
           .project-name {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: white;
             font-weight: bold;
           }
 
           .tech-stack {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #ccc;
             margin-top: 8px;
+          }
+
+          @media only screen and (max-width: 768px) {
+            padding: 15px;
+
+            .project-name {
+              font-size: 1.3rem;                // Smaller heading on mobile
+            }
+
+            .tech-stack {
+              font-size: 1rem;                  // Smaller text on mobile
+            }
+          }
+
+          @media only screen and (max-width: 480px) {
+            padding: 10px;
+
+            .project-name {
+              font-size: 1.2rem;
+            }
+
+            .tech-stack {
+              font-size: 0.9rem;
+            }
           }
         }
 
@@ -113,21 +163,21 @@
 // Responsive Design
 @media only screen and (max-width: 1024px) {
   .portfolio__content__cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);      // Two columns on tablets
   }
 }
 
 @media only screen and (max-width: 768px) {
   .portfolio__content__cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);      // Two columns on smaller screens
+    gap: 1rem;
   }
 
   .overlay {
-    padding: 10px;
+    padding: 12px;
 
     .project-name {
-      font-size: 1.4rem;
+      font-size: 1.3rem;                        // Smaller text
     }
 
     .tech-stack {
@@ -138,14 +188,14 @@
 
 @media only screen and (max-width: 480px) {
   .portfolio__content__cards {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;                 // One column for small screens
   }
 
   .overlay {
-    padding: 8px;
+    padding: 10px;
 
     .project-name {
-      font-size: 1.2rem;
+      font-size: 1.1rem;                        // Smaller text
     }
 
     .tech-stack {
