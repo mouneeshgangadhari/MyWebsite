@@ -14,8 +14,8 @@
     margin-bottom: 25px;
 
     button {
-      padding: 10px 20px;                    // Smaller padding for compactness
-      font-size: 0.9rem;                      // Smaller font size
+      padding: 10px 20px;                    // Compact button padding
+      font-size: 0.9rem;                     
       border-radius: 6px;
       transition: all 0.3s ease;
 
@@ -36,7 +36,7 @@
   &__category {
     background: var(--theme-card-bg);
     border-radius: 10px;
-    padding: 20px;                           // Reduced padding for compact design
+    padding: 20px;                           
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
 
@@ -47,7 +47,7 @@
   }
 
   &__category-title {
-    font-size: 1.4rem;                       // Smaller heading for mobile
+    font-size: 1.4rem;                       
     font-weight: 700;
     color: var(--theme-primary-color);
     margin-bottom: 15px;
@@ -55,13 +55,13 @@
 
   &__progress-bars {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);   // 2 icons per row for mobile
+    grid-template-columns: repeat(3, 1fr);   
     gap: 1.2rem;
     justify-content: center;
     align-items: center;
 
     @media (max-width: 480px) {
-      grid-template-columns: 1fr;            // 1 icon per row on very small screens
+      grid-template-columns: 1fr;            // Single column layout on very small screens
     }
   }
 
@@ -79,12 +79,12 @@
   }
 
   &__progress-bar-label {
-    font-size: 1rem;                        // Smaller label font for mobile
+    font-size: 1rem;                        
     font-weight: 600;
     color: var(--theme-text-color);
 
     img {
-      width: 60px;                          // Smaller icon size
+      width: 60px;                          // Default icon size
       height: 60px;
       object-fit: contain;
       border-radius: 50%;
@@ -120,11 +120,11 @@
 
     &__category {
       width: 100%;
-      padding: 18px;                       // Smaller padding
+      padding: 18px;                       
     }
 
     &__category-title {
-      font-size: 1.2rem;                   // Smaller headings
+      font-size: 1.2rem;                   
     }
 
     &__progress-bars {
@@ -136,8 +136,8 @@
       font-size: 0.9rem;
 
       img {
-        width: 50px;                       // Smaller icons
-        height: 50px;
+        width: 45px;                       // Smaller icons for mobile view
+        height: 45px;
       }
     }
   }
