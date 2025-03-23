@@ -13,17 +13,35 @@
     align-items: center;
     max-width: 1200px;
     width: 100%;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
   }
 
   &__text-wrapper {
     flex: 1;
     padding-right: 40px;
+
+    @media (max-width: 1024px) {
+      padding: 0;
+    }
   }
 
   &__title {
     font-size: 3rem;
     font-weight: bold;
     margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
 
     span {
       color: var(--theme-primary-color);
@@ -35,6 +53,14 @@
     font-size: 3.5rem;
     font-weight: bold;
     color: var(--theme-accent-color);
+
+    @media (max-width: 768px) {
+      font-size: 2.8rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2.2rem;
+    }
   }
 
   &__role {
@@ -43,6 +69,14 @@
     color: var(--theme-secondary-text);
     margin: 10px 0;
     transition: opacity 0.8s, transform 0.8s;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
   }
 
   &__bio {
@@ -51,6 +85,15 @@
     max-width: 600px;
     line-height: 1.6;
     margin-top: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+      max-width: 90%;
+    }
   }
 
   &__contact-me {
@@ -73,6 +116,16 @@
       &:active {
         transform: translateY(0);
       }
+
+      @media (max-width: 768px) {
+        padding: 10px 25px;
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+      }
     }
   }
 
@@ -81,6 +134,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1024px) {
+      order: -1;  // Move the image above the text on smaller screens
+    }
   }
 
   &__image {
@@ -93,6 +150,14 @@
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      max-width: 300px;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 200px;
     }
   }
 }
