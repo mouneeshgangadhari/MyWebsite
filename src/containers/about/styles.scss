@@ -4,11 +4,12 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    padding: 50px 40px;
+    padding: 30px 20px;  // Reduced padding for smaller screens
 
     @media (min-width: 768px) {
       flex-direction: row;
       justify-content: space-between;
+      padding: 50px 40px; 
     }
 
     &__personalWrapper, &__servicesWrapper {
@@ -16,7 +17,7 @@
       max-width: 500px;
       background: var(--bg-secondary);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 30px;
+      padding: 20px;  // Slightly smaller padding for better fit on mobile
       border-radius: 12px;
       transition: all 0.3s ease;
 
@@ -26,9 +27,9 @@
       }
 
       h3 {
-        font-size: 2rem;
+        font-size: 1.8rem;  // Slightly smaller heading for mobile
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 15px;  
         color: var(--text-primary);
       }
 
@@ -39,7 +40,7 @@
         li {
           display: flex;
           justify-content: space-between;
-          padding: 15px 0;
+          padding: 12px 0;  
           border-bottom: 1px dashed var(--border-color);
 
           &:last-child {
@@ -49,10 +50,12 @@
           .title {
             font-weight: 600;
             color: var(--text-secondary);
+            font-size: 0.9rem;  // Adjusted for readability on mobile
           }
 
           .value {
             color: var(--text-primary);
+            font-size: 0.9rem;  
           }
         }
       }
@@ -64,8 +67,8 @@
       align-items: center;
 
       &__innerContent {
-        width: 350px;
-        height: 350px;
+        width: 280px;  // Smaller size for mobile
+        height: 280px;
         background: radial-gradient(
           circle, var(--theme-primary-color) 0%, transparent 70%
         );
@@ -87,29 +90,41 @@
         }
 
         div:nth-child(1) {
-          top: -10%;
+          top: -5%;
           left: 45%;
         }
 
         div:nth-child(2) {
-          right: -10%;
+          right: -5%;
           top: 45%;
         }
 
         div:nth-child(3) {
-          bottom: -10%;
+          bottom: -5%;
           left: 45%;
         }
 
         div:nth-child(4) {
-          left: -10%;
+          left: -5%;
           top: 45%;
         }
 
         svg {
-          width: 70px;
-          height: 70px;
+          width: 50px;  // Smaller icon size for mobile
+          height: 50px;
           color: var(--text-primary);
+        }
+      }
+
+      @media (max-width: 480px) {
+        &__innerContent {
+          width: 220px;
+          height: 220px;
+
+          svg {
+            width: 40px;
+            height: 40px;
+          }
         }
       }
     }
@@ -139,4 +154,3 @@
   --border-color: #555555;
   --theme-primary-color: #ffcc00;
 }
-
