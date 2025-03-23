@@ -22,7 +22,7 @@ const personalDetails = [
   { label: "Name", value: "Mouneesh Gangadhari" },
   { label: "Age", value: calculateAge("2003-06-08") },
   { label: "Address", value: "Hyderabad, Telangana, India" },
-  {label:"roles",value:"Software developer,Machine Learning Engineer"}
+  {label:"roles",value:"Software developer"}
 ];
 
 const About = () => {
