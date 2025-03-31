@@ -1,67 +1,86 @@
 // Skills Section Styles
 .skills {
-  padding: 20px 15px;                       // Increased padding for better spacing
+  width: 100vw;                            /* Use full viewport width */
+  min-height: 100vh;                       /* Use full viewport height */
   text-align: center;
-  width: 100%;
+  font-weight: 300;
   background-color: var(--theme-background);
   color: var(--theme-text-color);
+  padding: 40px 5%;                        /* Add padding for spacing */
 
   &__filter {
     display: flex;
-    flex-wrap: wrap;                         // Ensure buttons wrap on smaller screens
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 15px;                             /* More spacing for buttons */
     justify-content: center;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
 
     button {
-      padding: 10px 20px;                    // Compact button padding
-      font-size: 0.9rem;                     
-      border-radius: 6px;
+      margin-top: 10px;
+      background-color: var(--theme-background);
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      font-weight: 500;
       transition: all 0.3s ease;
+      border: 1px solid var(--border-color); 
 
       &:hover, &.active {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+        color: var(--theme-primary-color);
       }
     }
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: 1fr;               // Single column layout for mobile
-    gap: 1.5rem;
-    margin-top: 15px;
+    grid-template-columns: repeat(3, 1fr); /* Use three columns for large screens */
+    gap: 2rem;
+    margin-top: 30px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;           /* One column for smaller screens */
+    }
   }
 
   &__category {
     background: var(--theme-card-bg);
-    border-radius: 10px;
-    padding: 20px;                           
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     }
   }
 
   &__category-title {
-    font-size: 1.4rem;                       
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--theme-primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   &__progress-bars {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);   
-    gap: 1.2rem;
+    grid-template-columns: repeat(3, 1fr); /* Three columns by default */
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
 
-    @media (max-width: 480px) {
-      grid-template-columns: 1fr;            // Single column layout on very small screens
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;           /* One column for smaller screens */
     }
   }
 
@@ -70,31 +89,31 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 8px;
+    gap: 12px;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
   }
 
   &__progress-bar-label {
-    font-size: 1rem;                        
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--theme-text-color);
 
     img {
-      width: 60px;                          // Default icon size
-      height: 60px;
+      width: 90px;                         /* Larger icons */
+      height: 90px;
       object-fit: contain;
       border-radius: 50%;
       background: #fff;
-      padding: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.15);
       }
     }
   }
@@ -103,41 +122,53 @@
 // Mobile-Specific Styles
 @media only screen and (max-width: 768px) {
   .skills {
-    padding: 20px 10px;                    // Compact padding
+    padding: 30px 4%;
 
     &__filter {
-      gap: 8px;
+      gap: 12px;
 
       button {
-        padding: 8px 15px;
-        font-size: 0.85rem;
+        padding: 10px 20px;
+        font-size: 1rem;
       }
     }
 
     &__content {
-      grid-template-columns: 1fr;           // Single column for better readability
+      grid-template-columns: 1fr;          
     }
 
     &__category {
-      width: 100%;
-      padding: 18px;                       
+      padding: 24px;                      
     }
 
     &__category-title {
-      font-size: 1.2rem;                   
+      font-size: 1.4rem;                  
     }
 
     &__progress-bars {
-      grid-template-columns: 1fr;           // One icon per row on smaller screens
-      gap: 1rem;
+      grid-template-columns: 1fr;          
+      gap: 1.2rem;
     }
 
     &__progress-bar-label {
-      font-size: 0.9rem;
+      font-size: 1rem;
 
       img {
-        width: 45px;                       // Smaller icons for mobile view
-        height: 45px;
+        width: 60px;                      /* Smaller icons for mobile */
+        height: 60px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .skills {
+    padding: 20px 5%;
+
+    &__progress-bar-label {
+      img {
+        width: 50px;                      /* Smaller icons for very small screens */
+        height: 50px;
       }
     }
   }
