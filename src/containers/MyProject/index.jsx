@@ -70,7 +70,7 @@ const Projects = () => {
 
   return (
     <section id="portfolio" className="portfolio">
-      <PageHeaderContent headerText="My Projects" icon={<BsInfoCircleFill size={40} />} />
+      <PageHeaderContent headerText="My Projects"  />
       <div className="portfolio__content">
         <ul className="portfolio__content__filter">
           {filterData.map(({ filterId, label }) => (
