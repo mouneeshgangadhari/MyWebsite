@@ -27,8 +27,8 @@
 
       &:hover, &.active {
         transform: translateY(-3px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-        color: var(--theme-primary-color);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1); 
+        background-color: var(--theme-primary-color);
       }
     }
   }
