@@ -21,8 +21,8 @@ const calculateAge = (birthDate) => {
 const personalDetails = [
   { label: "Name", value: "Mouneesh Gangadhari" },
   { label: "Age", value: calculateAge("2003-06-08") },
-  { label: "Address", value: "Hyderabad, Telangana, India" },
-  {label:"roles",value:"Software developer"}
+  { label: "Location", value: "Hyderabad, Telangana, India" },
+  {label:"Roles",value:"Software developer"}
 ];
 
 const About = () => {
@@ -30,7 +30,6 @@ const About = () => {
     <section id="about" className="about">
       <PageHeaderContent
         headerText="About Me"
-        icon={<BsInfoCircleFill size={40} />}
       />
 
       <div className="about__content">
@@ -41,7 +40,7 @@ const About = () => {
             play
             duration={1.5}
             delay={0.5}
-            start={{ transform: "translateX(500px)" }}
+            start={{ transform: "translateX(200px)" }}
             end={{ transform: "translatex(0px)" }}
           >
             <h3>Personal Information</h3>
@@ -62,7 +61,7 @@ const About = () => {
             play
             duration={1.5}
             delay={0.5}
-            start={{ transform: "translateX(-500px)" }}
+            start={{ transform: "translateX(-200px)" }}
             end={{ transform: "translatex(0px)" }}
           >
             <div className="about__content__servicesWrapper__innerContent">
