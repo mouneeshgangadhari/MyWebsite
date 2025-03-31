@@ -29,7 +29,6 @@ const Skills = () => {
     <section id="skills" className="skills">
       <PageHeaderContent
         headerText="My Skills"
-        icon={<BsInfoCircleFill size={40} />}
       />
 
       {/* Filter buttons */}
