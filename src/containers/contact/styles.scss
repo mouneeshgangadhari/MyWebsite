@@ -1,3 +1,4 @@
+
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f0f0f0;
@@ -18,13 +19,15 @@
 
 .dark {
   --bg-primary: #1e1e1e;
+  --theme-accent-color: #4a90e2;
+  --theme-accent-dark: #4a90e2;
   --bg-secondary: #2c2c2c;
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
   --border-color: #555555;
-  --theme-primary-color: #ffcc00;
   --theme-footer-bg: #2c2c2c;
   --theme-footer-text: #cccccc;
+  --theme-text:var(--bg-primary)
 }
 
 .contact {
@@ -52,7 +55,7 @@
   }
 
   h3 {
-    color: var(--theme-accent-color);
+    // color: var(--theme-accent-color);
   }
 
   form {
@@ -107,7 +110,6 @@
       align-items: center;
       gap: 10px;
       text-decoration: none;
-      color: var(--theme-text);
       transition: color 0.3s;
 
       &:hover {
