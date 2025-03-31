@@ -1,8 +1,9 @@
 // Portfolio Section
 .portfolio {
   &__content {
-    padding: 30px 20px;                        // Adjusted padding for better spacing
-    width: 100%;
+    padding: 30px 20px;   
+    width: 100vw;                            /* Full viewport width */
+  min-height: 100vh; 
     background: var(--theme-background);
     color: var(--theme-text-color);
 
