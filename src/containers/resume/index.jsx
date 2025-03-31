@@ -26,7 +26,6 @@ const Resume = () => {
             My Resume
           </a>
         }
-        icon={<BsInfoCircleFill size={40} />}
       />
 
       <div className="resume__container">
