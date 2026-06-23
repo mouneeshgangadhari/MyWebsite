@@ -2,6 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
 [data-theme="light"] {
   --theme-primary-color: #006eff;
   --theme-text-color: #333;
@@ -10,8 +11,31 @@
 }
 
 [data-theme="dark"] {
-  --theme-primary-color: #ffcc00;
+  --theme-primary-color: #006eff;
   --theme-text-color: #f5f5f5;
   --theme-card-bg: #222;
-  --theme-accent-color: #ffcc00;
+  --theme-accent-color: hsla(205, 100%, 50%, 0.874);
 }
+
+/* Strong override — cover common variable names used by UI libs (daisyUI, custom themes, etc.)
+   This forces the intended blue across different variable names that might be used in your components.
+   Keep this at the end of the final built CSS so it wins; remove !important only after confirming nothing else overrides it. */
+html[data-theme="dark"],
+html[data-theme="dark"] * {
+  /* primary color variants */
+  --theme-primary-color: #006eff !important;
+  --theme-primary: #006eff !important;
+  --primary: #006eff !important;
+  --p: #006eff !important;
+
+  /* accent / brand variants */
+  --theme-accent-color: hsla(205, 100%, 50%, 0.874) !important;
+  --accent: hsla(205, 100%, 50%, 0.874) !important;
+
+  /* if any libs use full-theme map names */
+  --theme-primary-500: #006eff !important;
+  --theme-primary-600: #006eff !important;
+}
+
+/* Debug hint: if yellow still appears, open DevTools -> Computed -> color and click the rule shown.
+   That will reveal the exact file/line that sets the color (or the variable) so you can remove or update it. */

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaSun, FaMoon } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
@@ -21,7 +21,11 @@ const Navbar = ({ darkMode, toggleTheme }) => {
   };
 
   return (
-    <nav className="navbar">
+    <nav
+      className={
+        "backdrop-filter backdrop-blur-lg border-b-0 dark:bg-grey-900 dark:bg-opacity-40 border-gray-200 dark:border-b-0 z-30 min-w-full flex flex-col fixed navbar"
+      }
+    >
       <div className="navbar__container">
         <NavLink to="/" className="navbar__logo">
           Mouneesh
@@ -41,6 +45,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
           {data.map((item, key) => (
             <li key={key} className="navbar__menu__item">
               <NavLink
+                style={{ textDecoration: "none", isActive: { background: "var(--theme-primary-color)", color: "white" } }}
                 to={item.to}
                 className={({ isActive }) =>
                   isActive
@@ -61,7 +66,11 @@ const Navbar = ({ darkMode, toggleTheme }) => {
               className="navbar__menu__item__links theme-toggle"
               aria-label="Toggle Theme"
             >
-              {darkMode ? <FaSun size={24} color="white" /> : <FaMoon size={24} color="white" />}
+              {darkMode ? (
+                <FaSun size={24} color="white" />
+              ) : (
+                <FaMoon size={24} color="black" />
+              )}
             </button>
           </li>
         </ul>

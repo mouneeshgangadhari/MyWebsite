@@ -136,7 +136,7 @@
     align-items: center;
 
     @media (max-width: 1024px) {
-      order: -1;  // Move the image above the text on smaller screens
+      order: -1; // Move the image above the text on smaller screens
     }
   }
 

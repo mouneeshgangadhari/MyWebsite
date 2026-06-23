@@ -8,11 +8,12 @@ const roles = [
   "Frontend Developer",
   "Backend Developer",
   "Full Stack Developer",
-  "Machine Learning Engineer",
+  "AI Engineer",
+  "Junior DevOps Engineer"
 ];
 
 const url =
-  "https://portfolio-ten-black-91.vercel.app/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fharsha-10-portfolio.appspot.com%2Fo%2F41844.jpg%3Falt%3Dmedia&w=2048&q=75";
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz21eVD8VCiwBNUwjkvZyUocGTrmQMHaKVZ8yWMFP4QSm4YfmlzBpGs7hB&s=10";
 
 const wavingHandUrl =
   "https://portfolio-ten-black-91.vercel.app/_next/static/media/waving-hand.1da6fc7a.gif";
@@ -51,7 +52,7 @@ const Home = () => {
                 className="waving-hand"
                 style={{ width: "40px", height: "40px", verticalAlign: "middle" }}
               />}
-              
+
             </span>
             <br />
             <motion.span

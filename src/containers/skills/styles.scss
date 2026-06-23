@@ -1,17 +1,22 @@
 // Skills Section Styles
 .skills {
-  width: 100vw;                            /* Use full viewport width */
-  min-height: 100vh;                       /* Use full viewport height */
+  width: 100vw;
+  /* Use full viewport width */
+  min-height: 100vh;
+  /* Use full viewport height */
   text-align: center;
   font-weight: 300;
   background-color: var(--theme-background);
   color: var(--theme-text-color);
-  padding: 40px 5%;                        /* Add padding for spacing */
+  padding: 40px 5%;
+  padding-top: 7%;
+  /* Add padding for spacing */
 
   &__filter {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;                             /* More spacing for buttons */
+    gap: 15px;
+    /* More spacing for buttons */
     justify-content: center;
     margin-bottom: 40px;
 
@@ -23,27 +28,31 @@
       border-radius: 8px;
       font-weight: 500;
       transition: all 0.3s ease;
-      border: 1px solid var(--border-color); 
+      border: 1px solid var(--border-color);
 
-      &:hover, &.active {
+      &:hover,
+      &.active {
         transform: translateY(-3px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1); 
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
         background-color: var(--theme-primary-color);
       }
     }
   }
 
   &__content {
-    grid-template-columns: repeat(3, 1fr); /* Use three columns for large screens */
+    grid-template-columns: repeat(3, 1fr);
+    /* Use three columns for large screens */
     gap: 2rem;
     margin-top: 30px;
 
     @media (max-width: 1200px) {
-      grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+      grid-template-columns: repeat(2, 1fr);
+      /* Two columns for medium screens */
     }
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;           /* One column for smaller screens */
+      grid-template-columns: 1fr;
+      /* One column for smaller screens */
     }
   }
 
@@ -70,17 +79,20 @@
 
   &__progress-bars {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns by default */
+    grid-template-columns: repeat(3, 1fr);
+    /* Three columns by default */
     gap: 1.5rem;
     justify-content: center;
     align-items: center;
 
     @media (max-width: 1200px) {
-      grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+      grid-template-columns: repeat(2, 1fr);
+      /* Two columns for medium screens */
     }
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;           /* One column for smaller screens */
+      grid-template-columns: 1fr;
+      /* One column for smaller screens */
     }
   }
 
@@ -103,7 +115,8 @@
     color: var(--theme-text-color);
 
     img {
-      width: 90px;                         /* Larger icons */
+      width: 90px;
+      /* Larger icons */
       height: 90px;
       object-fit: contain;
       border-radius: 50%;
@@ -134,19 +147,19 @@
     }
 
     &__content {
-      grid-template-columns: 1fr;          
+      grid-template-columns: 1fr;
     }
 
     &__category {
-      padding: 24px;                      
+      padding: 24px;
     }
 
     &__category-title {
-      font-size: 1.4rem;                  
+      font-size: 1.4rem;
     }
 
     &__progress-bars {
-      grid-template-columns: 1fr;          
+      grid-template-columns: 1fr;
       gap: 1.2rem;
     }
 
@@ -154,7 +167,8 @@
       font-size: 1rem;
 
       img {
-        width: 60px;                      /* Smaller icons for mobile */
+        width: 60px;
+        /* Smaller icons for mobile */
         height: 60px;
       }
     }
@@ -167,7 +181,8 @@
 
     &__progress-bar-label {
       img {
-        width: 50px;                      /* Smaller icons for very small screens */
+        width: 50px;
+        /* Smaller icons for very small screens */
         height: 50px;
       }
     }

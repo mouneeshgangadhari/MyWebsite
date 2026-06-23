@@ -1,29 +1,44 @@
+// :root {
+//   --theme-primary-color: var(--theme-primary-color, #4f46e5);
+//   --theme-background: var(--theme-background, #060303);
+//   --theme-card-bg: var(--theme-card-bg, #f8fafc);
+//   --theme-text-color: var(--theme-text-color, #0e4cdc);
+//   --theme-text-secondary: var(--theme-text-secondary, #475569);
+// }
 .about {
-  width: 100vw;                            /* Full viewport width */
-  min-height: 100vh;                       /* Full viewport height */
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  padding: 60px 5%;                        /* Consistent padding for larger screens */
+  width: 100vw;
+  /* Full viewport width */
+  min-height: 100vh;
+  /* Full viewport height */
+  background-color: var(--theme-background);
+  color: var(--theme-text-color);
+  padding: 60px 5%;
+  padding-top: 7%;
+  /* Consistent padding for larger screens */
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;                             /* More spacing between sections */
+    gap: 60px;
+    /* More spacing between sections */
 
     @media (min-width: 768px) {
       flex-direction: row;
       justify-content: space-between;
-      padding: 80px 8%;                    /* Increased padding for large screens */
+      padding: 80px 8%;
+      /* Increased padding for large screens */
     }
 
-    &__personalWrapper, 
+    &__personalWrapper,
     &__servicesWrapper {
       width: 100%;
-      max-width: 600px;                     /* Larger max width for bigger screens */
-      background: var(--bg-secondary);
+      max-width: 600px;
+      /* Larger max width for bigger screens */
+      background-color: var(--theme-background);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      padding: 40px;                        /* Increased padding */
+      padding: 40px;
+      /* Increased padding */
       border-radius: 15px;
       transition: all 0.4s ease;
 
@@ -33,9 +48,10 @@
       }
 
       h3 {
-        font-size: 2rem;                    /* Larger heading size */
+        font-size: 2rem;
+        /* Larger heading size */
         font-weight: 700;
-        margin-bottom: 20px;  
+        margin-bottom: 20px;
         color: var(--text-primary);
       }
 
@@ -46,7 +62,7 @@
         li {
           display: flex;
           justify-content: space-between;
-          padding: 15px 0;  
+          padding: 15px 0;
           border-bottom: 1px dashed var(--border-color);
 
           &:last-child {
@@ -56,7 +72,8 @@
           .title {
             font-weight: 600;
             color: var(--text-secondary);
-            font-size: 1rem;                /* Increased readability */
+            font-size: 1rem;
+            /* Increased readability */
           }
 
           .value {
@@ -73,11 +90,10 @@
       align-items: center;
 
       &__innerContent {
-        width: 400px;                       /* Larger size for large screens */
+        width: 400px;
+        /* Larger size for large screens */
         height: 400px;
-        background: radial-gradient(
-          circle, var(--theme-primary-color) 0%, transparent 70%
-        );
+        background: radial-gradient(circle, var(--theme-primary-color) 0%, transparent 70%);
         border-radius: 50%;
         border: 3px solid var(--theme-primary-color);
         position: relative;
@@ -101,22 +117,33 @@
         }
 
         div:nth-child(2) {
+          top: 21%;
           right: -8%;
-          top: 45%;
         }
 
         div:nth-child(3) {
+          bottom: 21%;
+          right: -8%;
+        }
+
+        div:nth-child(4) {
           bottom: -8%;
           left: 45%;
         }
 
-        div:nth-child(4) {
+        div:nth-child(5) {
+          bottom: 21%;
           left: -8%;
-          top: 45%;
+        }
+
+        div:nth-child(6) {
+          top: 21%;
+          left: -8%;
         }
 
         svg {
-          width: 60px;                      /* Larger icon size */
+          width: 60px;
+          /* Larger icon size */
           height: 60px;
           color: var(--text-primary);
           transition: transform 0.3s;
@@ -129,7 +156,8 @@
 
       @media (max-width: 768px) {
         &__innerContent {
-          width: 300px;                      /* Medium size for tablets */
+          width: 300px;
+          /* Medium size for tablets */
           height: 300px;
 
           svg {
@@ -141,7 +169,8 @@
 
       @media (max-width: 480px) {
         &__innerContent {
-          width: 220px;                      /* Smaller size for mobile */
+          width: 220px;
+          /* Smaller size for mobile */
           height: 220px;
 
           svg {
@@ -167,7 +196,8 @@
   --text-primary: #333333;
   --text-secondary: #555555;
   --border-color: #cccccc;
-  --theme-primary-color: #4a90e2;           /* Main theme color */
+  --theme-primary-color: #4a90e2;
+  /* Main theme color */
 }
 
 /* Dark Mode */

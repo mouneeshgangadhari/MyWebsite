@@ -9,8 +9,8 @@ const filterData = [
   { filterId: 0, label: "Languages" },
   { filterId: 1, label: "Frameworks & Libraries" },
   { filterId: 2, label: "Databases & Blockchain" },
-  { filterId: 3, label: "Tools & Platforms" },
-  { filterId: 4, label: "AI & ML" },
+  { filterId: 3, label: "AI & ML" },
+  { filterId: 4, label: "DevOps" },
 ];
 
 const Skills = () => {
@@ -27,9 +27,9 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills">
-      <PageHeaderContent
+      {/* <PageHeaderContent
         headerText="My Skills"
-      />
+      /> */}
 
       {/* Filter buttons */}
       <div className="skills__filter">

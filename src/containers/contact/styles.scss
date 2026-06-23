@@ -1,34 +1,31 @@
-
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f0f0f0;
-  --text-primary: #333333;
-  --text-secondary: #555555;
-  --border-color: #cccccc;
-  --theme-primary-color: #4a90e2;
-  --theme-accent-color: #ffcc00;
-  --theme-accent-dark: #ffaa00;
-  --theme-btn-text: #fff;
-  --theme-disabled-bg: #ccc;
-  --theme-footer-bg: #f0f0f0;
-  --theme-footer-text: #555;
-  --theme-bg: #f9f9f9;
-  --theme-text: #333;
-  --theme-border: #ccc;
+  --theme-primary-color: var(--theme-primary-color, #4f46e5);
+  --theme-background: var(--theme-background, #060303);
+  --theme-card-bg: var(--theme-card-bg, #f8fafc);
+  --theme-text-color: var(--theme-text-color, #0e4cdc);
+  --theme-text-secondary: var(--theme-text-secondary, #475569);
+
+  // Mapped Contact Form Variables (Light Mode)
+  --theme-bg: var(--theme-card-bg);
+  --theme-text: var(--theme-text-color);
+  --theme-border: #cbd5e1;
+  --theme-accent-color: var(--theme-primary-color);
+  --theme-btn-text: #ffffff;
+  --theme-accent-dark: var(--theme-accent-dark, #3730a3); // Hover state (darker indigo fallback)
+  --theme-disabled-bg: #cbd5e1;
+  --theme-footer-bg: var(--theme-card-bg);
+  --theme-footer-text: var(--theme-text-secondary);
 }
 
 .dark {
-  --bg-primary: #1e1e1e;
-  --theme-accent-color: #4a90e2;
-  --theme-accent-dark: #4a90e2;
-  --bg-secondary: #2c2c2c;
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --border-color: #555555;
-  --theme-footer-bg: #2c2c2c;
-  --theme-footer-text: #cccccc;
-  --theme-text:var(--bg-primary)
+  --theme-bg: #111827;
+  --theme-text: #f3f4f6;
+  --theme-border: #374151;
+  --theme-accent-dark: var(--theme-accent-dark, #4338ca);
+  --theme-disabled-bg: #4b5563;
+  --theme-footer-bg: #111827;
 }
+
 
 .contact {
   &__content {
@@ -63,17 +60,19 @@
     flex-direction: column;
     gap: 16px;
 
-    input, textarea {
+    input,
+    textarea {
       outline: none;
       border: 1px solid var(--theme-border);
       background: var(--theme-bg);
       color: var(--theme-text);
       padding: 12px 16px;
       border-radius: 8px;
-      transition: border 0.3s;
+      transition: border-color 0.3s, box-shadow 0.3s;
 
       &:focus {
         border-color: var(--theme-accent-color);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
       }
     }
 
@@ -83,16 +82,25 @@
       border: none;
       padding: 12px 24px;
       border-radius: 8px;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 
       &:hover {
         background: var(--theme-accent-dark);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+      }
+
+      &:active {
+        transform: translateY(0);
       }
 
       &:disabled {
         background: var(--theme-disabled-bg);
         cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
       }
     }
   }

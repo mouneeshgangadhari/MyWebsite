@@ -1,176 +1,256 @@
-// Resume Section Styles
+// Updated Resume Section Styles (improvements: responsive layout, accessibility, reduced-motion, card interactions, container max-width)
+:root {
+  --theme-primary-color: var(--theme-primary-color, #4f46e5);
+  --theme-background: var(--theme-background, #060303);
+  --theme-card-bg: var(--theme-card-bg, #f8fafc);
+  --theme-text-color: var(--theme-text-color, #0e4cdc);
+  --theme-text-secondary: var(--theme-text-secondary, #475569);
+
+  // Mapped Resume Variables (Light Mode)
+  --theme-border-color: #cbd5e1;
+}
+
+.dark {
+  --theme-card-bg: #111827; // Matches the dark input/card background from contact form
+  --theme-text-color: #f3f4f6;
+  --theme-text-secondary: #9ca3af;
+  --theme-border-color: #374151;
+}
+
+
+/* Basic reset for component */
+.resume,
+.resume * {
+  box-sizing: border-box;
+}
+
 .resume {
-    height: 100%;
-    padding: 30px 20px;                         // Added padding for better spacing
-    background-color: var(--theme-background);
-    color: var(--theme-text-color);
-  }
-  
-  .resume__container {
-    display: flex;
-    flex-wrap: wrap;                            // Allow wrapping on smaller screens
-    width: 100%;
-    gap: 2rem;
-    justify-content: space-between;
-    padding: 20px;
-  
-    @media only screen and (max-width: 768px) {
-      flex-direction: column;                   // Stack sections vertically
-      align-items: center;
-      padding: 20px 10px;                       // Smaller padding for mobile
-    }
-  }
-  
-  .timeline__education, .timeline__certificates {
-    width: 48%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: var(--theme-card-bg);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-  
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-  
-    @media only screen and (max-width: 768px) {
-      width: 100%;                              // Full-width on smaller screens
-      padding: 20px;
-    }
-  }
-  
-  .timeline__education__header-text, .timeline__certificates__header-text {
-    font-size: 1.5rem;                          // Slightly smaller headings
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--theme-primary-color);
-    position: relative;
-    text-align: center;
-  
-    &::before, &::after {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 5px;
-      bottom: -3px;
-      background: var(--theme-primary-color);
-    }
-  
-    &::before {
-      left: 0;
-    }
-  
-    &::after {
-      right: 0;
-    }
-  
-    @media only screen and (max-width: 768px) {
-      font-size: 1.3rem;                        // Smaller font size for mobile
-    }
-  }
-  
-  // Timeline Experience
-  .timeline__experience__vertical-timeline-element {
-    padding: 0 0 30px 0;
-  
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-  
-  // Timeline Titles & Description
-  .vertical-timeline-element-title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
-    h3, h4 {
-      font-size: 1.2rem;                        // Adjusted font size for mobile readability
-      color: var(--theme-text-color);
-    }
-  
-    h4 {
-      margin-left: 8px;
-    }
-  
-    @media only screen and (max-width: 768px) {
-      h3, h4 {
-        font-size: 1rem;                        // Smaller text for mobile
-      }
-    }
-  }
-  
-  .vertical-timeline-element-title-wrapper-description {
-    font-size: 1rem;                            // Smaller description font
+  height: 100%;
+  padding: 30px 20px;
+  background-color: var(--theme-background);
+  color: var(--theme-text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.resume__content__summary-text {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--theme-text-secondary);
+  margin-bottom: 30px;
+  padding-top: 10px;
+  line-height: 1.6;
+}
+/* Centered container with max width, uses flex gap and wrap */
+.resume__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.resume__tabs{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 30px;
+
+  .tab-btn {
+    font: 1em sans-serif;
     color: var(--theme-text-secondary);
-    line-height: 1.5;
-  
-    @media only screen and (max-width: 768px) {
-      font-size: 0.9rem;
-    }
-  }
-  
-  // Timeline Content
-  .vertical-timeline-element-content {
-    box-shadow: none;
-    background: var(--theme-card-bg);
-    border-radius: 8px;
-    padding: 20px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 10px 15px;
     transition: all 0.3s ease;
-  
+
     &:hover {
-      transform: scale(1.02);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      background-color: var(--theme-primary-color);
+      color: white;
+      border-radius: 5px;
     }
   }
-  
-  .vertical-timeline-element-content-arrow {
-    display: none;
-  }
-  
-  .vertical-timeline-element-date {
-    opacity: 1;
-    font-size: 1rem;
-    color: var(--theme-text-secondary);
-  
-    @media only screen and (max-width: 768px) {
-      font-size: 0.9rem;
+
+  .resume-download-btn {
+    &:hover {
+      background-color: var(--theme-primary-color) !important;
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(14, 76, 220, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
-  
-  // Mobile-Specific Styles
-  @media only screen and (max-width: 480px) {
-    .resume__container {
-      padding: 15px;
-      gap: 1rem;                                // Less gap on smaller screens
-    }
-  
-    .timeline__education, .timeline__certificates {
-      width: 100%;
-      padding: 15px;
-    }
-  
-    .timeline__education__header-text, .timeline__certificates__header-text {
-      font-size: 1.2rem;
-    }
-  
-    .vertical-timeline-element-title-wrapper h3,
-    .vertical-timeline-element-title-wrapper h4 {
-      font-size: 1rem;
-    }
-  
-    .vertical-timeline-element-title-wrapper-description {
-      font-size: 0.85rem;
-    }
-  
-    .vertical-timeline-element-date {
-      font-size: 0.85rem;
-    }
+}
+/* Cards use flex-basis to be more fluid; min-width ensures wrapping */
+.timeline__education,
+.timeline__certificates,
+.timeline__experience,
+.timeline__miscellaneous {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--theme-card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  flex: 1 1 calc(48% - 2rem);
+  min-width: 260px;
+  /* make the cards consistent in height where possible */
+  align-self: stretch;
+}
+
+/* Card interaction: accessible focus and reduced-motion support */
+.timeline__education:hover,
+.timeline__certificates:hover,
+.timeline__experience:hover,
+.timeline__miscellaneous:hover,
+.timeline__education:focus-within,
+.timeline__certificates:focus-within,
+.timeline__experience:focus-within,
+.timeline__miscellaneous:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__education,
+  .timeline__certificates,
+  .timeline__experience,
+  .timeline__miscellaneous {
+    transition: none;
+    transform: none;
   }
-  
+}
+
+/* Header text for sections */
+.timeline__education__header-text,
+.timeline__certificates__header-text {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--theme-primary-color);
+  position: relative;
+  text-align: center;
+}
+
+/* Decorative small marks are purely visual */
+.timeline__education__header-text::before,
+.timeline__education__header-text::after,
+.timeline__certificates__header-text::before,
+.timeline__certificates__header-text::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 5px;
+  bottom: -3px;
+  background: var(--theme-primary-color);
+}
+.timeline__education__header-text::before,
+.timeline__certificates__header-text::before { left: 0; }
+.timeline__education__header-text::after,
+.timeline__certificates__header-text::after { right: 0; }
+
+/* Timeline experience spacing */
+.timeline__experience__vertical-timeline-element {
+  padding: 0 0 30px 0;
+  &:last-child { padding-bottom: 0; }
+}
+.vertical-timeline::before{
+  background-color: var(--theme-primary-color);
+}
+/* Titles & description wrapper */
+.vertical-timeline-element-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+
+  h3, h4 {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--theme-text-color);
+    margin: 0;
+  }
+
+  h4 { margin-left: 8px; }
+}
+
+/* Description text */
+.vertical-timeline-element-title-wrapper-description {
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  color: var(--theme-text-secondary);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Timeline content card inside the timeline */
+.vertical-timeline-element-content {
+  box-shadow: none;
+  background: var(--theme-card-bg);
+  border: 1.5px solid var(--theme-border-color);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* subtle hover/focus effect for content */
+.vertical-timeline-element-content:hover,
+.vertical-timeline-element-content:focus-within {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.vertical-timeline-element-content-arrow { display: none; }
+
+.vertical-timeline-element-date {
+  opacity: 1;
+  font-size: 1rem;
+  color: var(--theme-text-secondary);
+}
+
+/* Mobile and small screen adjustments */
+@media only screen and (max-width: 992px) {
+  .resume__container { gap: 1.5rem; padding: 18px; }
+  .timeline__education,
+  .timeline__certificates { flex: 1 1 100%; }
+  .vertical-timeline-element-title-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .resume__container { padding: 20px 12px; gap: 1rem; }
+  .timeline__education,
+  .timeline__certificates { padding: 20px; }
+  .timeline__education__header-text,
+  .timeline__certificates__header-text { font-size: 1.3rem; }
+  .vertical-timeline-element-title-wrapper h3,
+  .vertical-timeline-element-title-wrapper h4 { font-size: 1rem; }
+  .vertical-timeline-element-title-wrapper-description { font-size: 0.95rem; }
+  .vertical-timeline-element-date { font-size: 0.9rem; }
+}
+
+@media only screen and (max-width: 480px) {
+  .resume__container { padding: 15px; gap: 0.8rem; }
+  .timeline__education,
+  .timeline__certificates { padding: 15px; border-radius: 10px; }
+  .timeline__education__header-text,
+  .timeline__certificates__header-text { font-size: 1.15rem; }
+  .vertical-timeline-element-title-wrapper h3,
+  .vertical-timeline-element-title-wrapper h4 { font-size: 1rem; }
+  .vertical-timeline-element-title-wrapper-description { font-size: 0.85rem; }
+  .vertical-timeline-element-date { font-size: 0.85rem; }
+}
+
+/* Focus-visible outline for keyboard users */
+.timeline__education:focus-within,
+.timeline__certificates:focus-within,
+.vertical-timeline-element-content:focus-within {
+  outline: 3px solid color-mix(in srgb, var(--theme-primary-color) 20%, transparent);
+  outline-offset: 4px;
+}

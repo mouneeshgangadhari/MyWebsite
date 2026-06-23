@@ -1,11 +1,11 @@
 .navbar {
     width: 100%;
-    background: #222;
+    background: rgb(18 15 22 / var(--tw-bg-opacity));
     padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -18,7 +18,7 @@
     }
 
     &__logo {
-        color: white;
+        // color: white;
         text-decoration: none;
         font-size: 1.5rem;
     }
@@ -38,11 +38,20 @@
         gap: 20px;
 
         &__item {
+
             &__links {
-                color: white;
+                // color: white;
                 text-decoration: none;
                 padding: 10px 15px;
                 transition: color 0.3s ease;
+                background: transparent;
+                color: inherit;
+
+                &.active {
+                    background: var(--theme-primary-color);
+                    color: white;
+                }
+
 
                 &:hover {
                     color: var(--theme-primary-color);

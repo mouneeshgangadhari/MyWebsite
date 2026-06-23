@@ -2,7 +2,7 @@ import React from "react";
 import PageHeaderContent from "../../components/pageHeaderContent";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { Animate } from "react-simple-animate";
-import { FaDatabase } from 'react-icons/fa';
+import { FaDatabase, FaDocker, FaGithub } from 'react-icons/fa';
 import { DiJava, DiPython } from 'react-icons/di';
 import { SiJavascript } from 'react-icons/si';
 import "./styles.scss";
@@ -22,18 +22,20 @@ const personalDetails = [
   { label: "Name", value: "Mouneesh Gangadhari" },
   { label: "Age", value: calculateAge("2003-06-08") },
   { label: "Location", value: "Hyderabad, Telangana, India" },
-  {label:"Roles",value:"Software developer"}
+  { label: "Roles", value: "Junior DevOps Engineer" }
 ];
 
 const About = () => {
+  console.log("Animate component:", Animate);
+  console.log("PageHeaderContent component:", PageHeaderContent);
   return (
     <section id="about" className="about">
-      <PageHeaderContent
+      {/* <PageHeaderContent
         headerText="About Me"
-      />
+      /> */}
 
       <div className="about__content">
-        
+
         {/* Personal Information Section */}
         <div className="about__content__personalWrapper">
           <Animate
@@ -69,6 +71,8 @@ const About = () => {
               <div><DiJava size={60} /></div>
               <div><DiPython size={60} /></div>
               <div><FaDatabase size={60} /></div>
+              <div><FaDocker size={60} /></div>
+              <div><FaGithub size={60} /></div>
             </div>
           </Animate>
         </div>
